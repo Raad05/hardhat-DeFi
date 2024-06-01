@@ -1,3 +1,9 @@
+/**
+ * firstly, get poolAddressesProvider contract using the interface, pool address provider address, and signer
+ * use it to get the pool address
+ * use the pool address to retrieve the pool
+ */
+
 const { getNamedAccounts, ethers } = require("hardhat");
 const { getWeth } = require("./getWeth");
 
