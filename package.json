@@ -14,5 +14,8 @@
     "dotenv": "^16.4.5",
     "hardhat": "^2.22.3",
     "hardhat-deploy": "^0.12.4"
+  },
+  "dependencies": {
+    "@aave/core-v3": "^1.19.3"
   }
 }
