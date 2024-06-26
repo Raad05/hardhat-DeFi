@@ -5,7 +5,7 @@
  */
 
 const { getNamedAccounts, ethers } = require("hardhat");
-const { getWeth } = require("./getWeth");
+const { getWeth, AMOUNT } = require("./getWeth");
 
 const main = async () => {
   await getWeth();
@@ -20,6 +20,13 @@ const main = async () => {
 
   // deposit
   const wethTokenAddress = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2";
+
+  // approve
+  await approveERC20(wethTokenAddress, pool.target, AMOUNT, signer);
+  console.log("Depositing...");
+
+  await pool.deposit(wethTokenAddress, AMOUNT, deployer, 0);
+  console.log("Deposited");
 };
 
 const getPool = async (account) => {
