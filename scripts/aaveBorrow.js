@@ -17,6 +17,9 @@ const main = async () => {
   // Lending pool address provider v3: 0x2f39d218133AFaB8F2B819B1066c7E434Ad94E9e
   const pool = await getPool(signer);
   console.log("Pool address:", pool.target);
+
+  // deposit
+  const wethTokenAddress = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2";
 };
 
 const getPool = async (account) => {
