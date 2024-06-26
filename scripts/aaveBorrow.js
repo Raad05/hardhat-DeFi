@@ -36,6 +36,23 @@ const getPool = async (account) => {
   return pool;
 };
 
+const approveERC20 = async (
+  erc20Address,
+  spenderAddress,
+  amountToSpend,
+  account
+) => {
+  const erc20Token = await ethers.getContractAt(
+    "IERC20",
+    erc20Address,
+    account
+  );
+
+  const tx = await erc20Token.approve(spenderAddress, amountToSpend);
+  await tx.wait();
+  console.log("Approved");
+};
+
 main()
   .then(() => process.exit(0))
   .catch((error) => {
